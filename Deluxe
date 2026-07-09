@@ -1,4 +1,6 @@
-local Library do
+local Library = {}
+
+do
     local Workspace = game:GetService("Workspace")
     local UserInputService = game:GetService("UserInputService")
     local Players = game:GetService("Players")
@@ -47,36 +49,34 @@ local Library do
     local RectNew = Rect.new
     local IsMobile = UserInputService.TouchEnabled or false
 
-    Library = {
-        Theme = {},
-        MenuKeybind = tostring(Enum.KeyCode.RightControl),
-        Flags = {},
-        Tween = {
-            Time = 0.3,
-            Style = Enum.EasingStyle.Quad,
-            Direction = Enum.EasingDirection.Out
-        },
-        FadeSpeed = 0.2,
-        Folders = {
-            Directory = "lyapossss",
-            Configs = "lyapossss/Configs",
-            Assets = "lyapossss/Assets",
-        },
-        Pages = {},
-        Sections = {},
-        Connections = {},
-        Threads = {},
-        ThemeMap = {},
-        ThemeItems = {},
-        OpenFrames = {},
-        SetFlags = {},
-        UnnamedConnections = 0,
-        UnnamedFlags = 0,
-        Holder = nil,
-        NotifHolder = nil,
-        UnusedHolder = nil,
-        Font = nil
+    Library.Theme = {}
+    Library.MenuKeybind = tostring(Enum.KeyCode.RightControl)
+    Library.Flags = {}
+    Library.Tween = {
+        Time = 0.3,
+        Style = Enum.EasingStyle.Quad,
+        Direction = Enum.EasingDirection.Out
     }
+    Library.FadeSpeed = 0.2
+    Library.Folders = {
+        Directory = "DeluxeUI",
+        Configs = "DeluxeUI/Configs",
+        Assets = "DeluxeUI/Assets",
+    }
+    Library.Pages = {}
+    Library.Sections = {}
+    Library.Connections = {}
+    Library.Threads = {}
+    Library.ThemeMap = {}
+    Library.ThemeItems = {}
+    Library.OpenFrames = {}
+    Library.SetFlags = {}
+    Library.UnnamedConnections = 0
+    Library.UnnamedFlags = 0
+    Library.Holder = nil
+    Library.NotifHolder = nil
+    Library.UnusedHolder = nil
+    Library.Font = nil
 
     Library.__index = Library
     Library.Sections.__index = Library.Sections
@@ -7123,11 +7123,4 @@ local Library do
     end
 end
 
-local Window = Library:Window({
-    Name = "Window",
-    SubName = "sub name",
-    Logo = "120959262762131"
-})
-
-Window:Init()
 return Library
